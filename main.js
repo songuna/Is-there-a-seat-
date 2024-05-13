@@ -1,3 +1,4 @@
+// 초기 채팅 인덱스
 var currentChatIndex = 0;
 var timeoutID;
 
@@ -9,7 +10,6 @@ function showWrap() {
     var wrap = document.querySelector('.wrap');
     wrap.style.display = 'block';
 }
-
 // chat 클래스 보이기
 function showNextChat() {
     // 다음 채팅 클래스 선택
@@ -28,7 +28,7 @@ function showNextChat() {
 
 // 30초마다 다음 채팅 표시
 function startChatTimer() {
-    timeoutID = setInterval(showNextChat, 1000); // 30초 (1000ms * 30)
+   timeoutID = setInterval(showNextChat, 1000); // 30초 (1000ms * 30)
 }
 
 // 페이지 로드시 wrap 보여주고 채팅 타이머 시작
