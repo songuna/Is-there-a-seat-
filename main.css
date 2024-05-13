@@ -92,3 +92,7 @@ a {
     content: "▶";
     color: #F9EB54;
 }
+
+.wrap .hidden{ 
+    visibility: hidden;
+}
