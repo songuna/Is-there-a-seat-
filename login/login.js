@@ -1,3 +1,5 @@
+import { checkAuth } from "./firebase";
+
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
@@ -28,12 +30,13 @@ signUpBtn.addEventListener('click', (event) => {
     });
 
     signInBtn.addEventListener('click', (event) => {
+        event.preventDefault();
         const email = signInForm.querySelector('input[type="email"]').value;
         const password = signInForm.querySelector('input[type="password"]').value;
         if (!email || !password) {
             event.preventDefault();
             alert('이메일과 비밀번호를 입력해주세요.');
         } else {
-            alert('로그인이 완료되었습니다.');
+            checkAuth(email);
         }
     });

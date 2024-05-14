@@ -1,0 +1,22 @@
+{
+  "name": "is-there-a-seat-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "firebase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songuna/Is-there-a-seat-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/songuna/Is-there-a-seat-/issues"
+  },
+  "homepage": "https://github.com/songuna/Is-there-a-seat-#readme",
+  "dependencies": {
+    "firebase": "^10.12.0"
+  }
+}
