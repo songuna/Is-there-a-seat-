@@ -1,4 +1,4 @@
-import { checkAuth } from "./firebase";
+import { checkAuth } from "../firebase.js";
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
