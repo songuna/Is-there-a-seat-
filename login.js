@@ -14,14 +14,26 @@ signInButton.addEventListener('click', () => {
   container.classList.remove("right-panel-active");
 });
 
-signInBtn.addEventListener('click', (event) => {
-     event.preventDefault();
-     alert('로그인이 완료되었습니다.');
-    // 여기에 로그인을 처리하는 코드를 추가할 수 있습니다.
- });
-
 signUpBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    alert('회원가입이 완료되었습니다.');
-    // 여기에 회원가입을 처리하는 코드를 추가할 수 있습니다.
-});
+        const name = signUpForm.querySelector('input[type="text"]').value;
+        const email = signUpForm.querySelector('input[type="email"]').value;
+        const password = signUpForm.querySelector('input[type="password"]').value;
+        if (!name || !email || !password) {
+            event.preventDefault();
+            alert('모든 빈칸를 입력해주세요.');
+        } else {
+            alert('회원가입이 완료되었습니다.');
+            // 여기에 회원가입을 처리하는 코드를 추가할 수 있습니다.
+        }
+    });
+
+    signInBtn.addEventListener('click', (event) => {
+        const email = signInForm.querySelector('input[type="email"]').value;
+        const password = signInForm.querySelector('input[type="password"]').value;
+        if (!email || !password) {
+            event.preventDefault();
+            alert('이메일과 비밀번호를 입력해주세요.');
+        } else {
+            alert('로그인이 완료되었습니다.');
+        }
+    });
