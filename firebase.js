@@ -1,6 +1,6 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
+import { doc, getFirestore, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
 
-import { initializeApp } from "./node_modules/firebase/firebase-app.js";
-import {doc, getFirestore, getDoc} from "./node_modules/firebase/firebase-firestore-lite.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDsM8maQlW7uYayXTNInIOs_K-btqlVaV8",
@@ -12,15 +12,30 @@ const firebaseConfig = {
     measurementId: "G-CG75TQNXBJ"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export const checkAuth = async (id) => {
-    const docRef = doc(db, 'auth', id);
+export const checkAuth = async (email) => {
+    const docRef = doc(db, 'auth', email);
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()){
-        alert('해당 유저가 존재합니다.');
-    } else {
-        alert('잘못된 아이디 입니다.');
+        alert('로그인에 성공하였습니다.');
+        // 로그인 성공시 로직 추가 (페이지 이동?)
+    }else{
+        alert('잘못된 아이디입니다.');
+    }
+}
+
+export const addAuth = async (name, email, pw) => {
+    const docRef = doc(db, 'auth', email);
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+        alert('이미 존재하는 이메일입니다. 다른 이메일을 입력해주세요.')
+    }else{
+        const newDocRef = doc(db, 'auth', email);
+        await setDoc(newDocRef, {name, email, pw});
+        alert('회원가입에 성공하였습니다.');
+        // 회원가입 성공시 로직 추가 (페이지 이동?)
     }
 }
