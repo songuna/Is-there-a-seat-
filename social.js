@@ -4,7 +4,7 @@ console.log( Kakao.isInitialized() ); // 초기화 판단여부
 
  function loginWithKakao() {
     Kakao.Auth.authorize({
-      redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
+      redirectUri: 'http://local.isthereasit.com:5500/pcroomlist.html',
     });
   }
 
