@@ -1,4 +1,3 @@
-
 // 마커를 담을 배열입니다
 
 const script = document.createElement("script");
