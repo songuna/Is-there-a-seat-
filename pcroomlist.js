@@ -1,38 +1,3 @@
-const getCurrentCoordinate = async () => {
-  
-  // 위치 정보를 비동기적으로 처리하기 위해 Promise를 반환
-  return new Promise((resolve, reject) => {
-    // 브라우저가 geolocation을 지원하는지 확인
-    if (navigator.geolocation) {
-      // geolocation을 이용해 현재 위치를 요청
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          // 위치 정보를 성공적으로 얻은 경우
-          console.log(position);
-          
-          // 위도와 경도를 추출
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          
-          // Kakao 지도 API의 LatLng 객체로 변환
-          const coordinate = new kakao.maps.LatLng(lat, lon);
-          
-          // Promise를 해결하여 좌표를 반환
-          resolve(coordinate);
-        },
-        (error) => {
-          // 위치 정보를 얻는 데 실패한 경우
-          reject(new Error("현재 위치를 불러올 수 없습니다."));
-          console.log(error)
-        }
-      );
-    } else {
-      // 브라우저가 geolocation을 지원하지 않는 경우
-      reject(new Error("현재 위치를 불러올 수 없습니다."));
-    }
-  });
-};
-
 
 // 마커를 담을 배열입니다
 
@@ -42,7 +7,7 @@ document.head.appendChild(script);
 script.onload = () => {
     kakao.maps.load(() => {
         const mapContainer = document.getElementById('map'); // 지도를 표시할 div
-        const center = new kakao.maps.LatLng(37.50802, 127.062835);
+        const center = new kakao.maps.LatLng(37.537183, 127.005454);
         const mapOption = {
             center,
             level: 3

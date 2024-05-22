@@ -1,20 +1,20 @@
 // 초기 채팅 인덱스
-const currentChatIndex = 0;
-const timeoutID;
+var currentChatIndex = 0;
+var timeoutID;
 
 // 채팅 메시지 클래스 목록
-const chatClasses = ['.chat1', '.chat2', '.chat3', '.chat4', '.chat5'];
+var chatClasses = ['.chat1', '.chat2', '.chat3', '.chat4', '.chat5'];
 
 // wrap 클래스 보이기
 function showWrap() {
-    const wrap = document.querySelector('.wrap');
+    var wrap = document.querySelector('.wrap');
     wrap.style.display = 'block';
 }
 // chat 클래스 보이기
 function showNextChat() {
     // 다음 채팅 클래스 선택
-    const nextChatClass = chatClasses[currentChatIndex];
-    const nextChat = document.querySelector(nextChatClass);
+    var nextChatClass = chatClasses[currentChatIndex];
+    var nextChat = document.querySelector(nextChatClass);
     nextChat.classList.remove('hidden');
 
     // 다음 채팅 인덱스 증가
