@@ -1,34 +1,28 @@
 // 마커를 담을 배열입니다
+var markers = [];
 
-const script = document.createElement("script");
-script.src ="http://dapi.kakao.com/v2/maps/sdk.js?appkey=36b99b4c6e7b7526f6c828331814f16a&libraries=LIBRARY";
-document.head.appendChild(script);
-script.onload = () => {
-    kakao.maps.load(() => {
-        const mapContainer = document.getElementById('map'); // 지도를 표시할 div
-        const center = new kakao.maps.LatLng(37.537183, 127.005454);
-        const mapOption = {
-            center,
-            level: 3
-        };
-        // 지도를 생성합니다
-        const map = new kakao.maps.Map(mapContainer, mapOption);
-        // 장소 검색 객체를 생성합니다
-        const ps = new kakao.maps.services.Places();  
-        // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-        const infowindow = new kakao.maps.InfoWindow({zIndex:1});
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
 
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-        // 키워드로 장소를 검색합니다
-        searchPlaces(ps);
-    });
-};
+// 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places();  
 
+// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
-// 키워드 검색을 요청하는 함수입니다 
-function searchPlaces(ps) {
+// 키워드로 장소를 검색합니다
+searchPlaces();
 
-    var keyword = document.getElementById('pc방').value;
+// 키워드 검색을 요청하는 함수입니다
+function searchPlaces() {
+
+    var keyword = document.getElementById('keyword').value;
 
     if (!keyword.replace(/^\s+|\s+$/g, '')) {
         alert('키워드를 입력해주세요!');
