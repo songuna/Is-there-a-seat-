@@ -21,7 +21,7 @@ export const checkAuth = async (email) => {
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()){
         alert('로그인에 성공하였습니다.');
-        // 로그인 성공시 로직 추가 (페이지 이동?)
+         window.location.href = 'http://local.isthereasit.com:5500/pcroomlist.html';
     }else{
         alert('잘못된 아이디입니다.');
     }
@@ -35,7 +35,6 @@ export const addAuth = async (name, email, pw) => {
     }else{
         const newDocRef = doc(db, 'auth', email);
         await setDoc(newDocRef, {name, email, pw});
-        alert('회원가입에 성공하였습니다.');
-        // 회원가입 성공시 로직 추가 (페이지 이동?)
+        alert('회원가입에 성공하였습니다. 다시 로그인');
     }
 }
