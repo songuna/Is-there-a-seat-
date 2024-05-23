@@ -57,6 +57,21 @@ function placesSearchCB(data, status, pagination) {
     }
 }
 
+// 검색결과 목록에 클릭 이벤트를 추가합니다
+function addListClickEvent() {
+    var listItems = document.querySelectorAll('.item');
+    listItems.forEach(function(item, index) {
+        item.addEventListener('click', function() {
+            // 해당 항목의 정보를 가져옵니다
+            var placeName = item.querySelector('h5').innerText;
+            var address = item.querySelector('.info span:first-child').innerText;
+            var phone = item.querySelector('.tel').innerText;
+
+            window.location.href = 'http://local.isthereasit.com:5500/pcroomres.html' + encodeURIComponent(placeName) + '&address=' + encodeURIComponent(address) + '&phone=' + encodeURIComponent(phone);
+        });
+    });
+}
+
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(places) {
 
@@ -113,6 +128,8 @@ function displayPlaces(places) {
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
     map.setBounds(bounds);
+
+    addListClickEvent();
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
