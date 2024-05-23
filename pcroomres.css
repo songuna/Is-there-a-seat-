@@ -1,0 +1,143 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #cecde4;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+
+}
+
+.pcroomContainer {
+    margin: 20px 0px;
+}
+
+.showcase {
+    background-color: #777;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+    padding: 5px 10px;
+}
+
+.pcroomContainer select {
+    margin: 10px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 7px;
+    appearance: none;
+    border: 0;
+}
+
+.pcroomContainer select option {
+    text-align: left;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.small {
+    color: #777;
+    margin-left: 2px;
+}
+
+.showcase .seat:hover {
+    cursor: default;
+    scale: 1;
+}
+
+.showcase .selectedSeat:hover {
+    cursor: default;
+    scale: 1;
+}
+
+.seat {
+    background-color: #444451;
+    color: black;
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.availableSeat {
+    background-color: #444451;
+    color: black;
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    cursor: default;
+}
+
+.selectedSeatIcon {
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    cursor: default;
+}
+
+.seat:hover {
+    scale: 1.2;
+}
+
+.selectedSeat:hover {
+    scale: 1.2;
+}
+
+.seat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+.seat:nth-of-type(7) {
+    margin-left: 18px;
+}
+
+.occupiedSeat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+.occupiedSeat:nth-of-type(7) {
+    margin-left: 18px;
+}
+
+.selectedSeat {
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.occupiedSeat {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    color: black;
+
+}
+
+.row {
+    display: flex;
+}
+
+.text {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#count {
+    color: black;
+}
