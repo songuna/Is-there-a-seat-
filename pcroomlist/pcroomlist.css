@@ -1,6 +1,8 @@
 body{
     width: 40%;
     height: 700px;
+    color: #8a8a8a;
+    font-family: "Gugi", sans-serif;
 }
 
 h1{
@@ -19,8 +21,8 @@ h1{
 .map_wrap * {
     margin: 0;
     padding: 0;
-    font-family: "Malgun Gothic", dotum, "돋움", sans-serif;
-    font-size: 12px;
+    font-family: "Noto Serif KR", serif;
+    font-size: 15px;
 }
 
 .map_wrap a,
@@ -32,7 +34,7 @@ h1{
 
 .map_wrap {
     position: relative;
-    left: 300px;
+    left: 350px;
     width: 70%;
     height: 500px;
 }
@@ -47,8 +49,8 @@ h1{
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 250px;
-    margin: 10px 650px 20px 10px;
+    width: 420px;
+    margin: 10px 830px 20px 10px;
     padding: 5px;
     overflow-y: auto;
     background: rgba(255, 255, 255, 0.7);

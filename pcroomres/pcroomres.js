@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let count = document.querySelector('#count'); // 인원수
 
     // 선택한 좌석수 텍스트 변경해주기
-    function countSeatPrice() {
+    function countSeatlist() {
         const selectedSeatCount = document.querySelectorAll('.selectedSeat').length;
 
         count.textContent = selectedSeatCount;
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.className = 'seat';
         }
 
-        countSeatPrice();
+        countSeatlist();
     });
 
     // 예약하기 버튼 클릭했을때
