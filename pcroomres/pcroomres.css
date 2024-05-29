@@ -1,7 +1,6 @@
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #cecde4;
-    color: #fff;
+    color: black;
     box-sizing: border-box;
 }
 
@@ -10,8 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 800px;
-
+    height: 400px;
 }
 
 .pcroomContainer {
@@ -81,7 +79,7 @@ li {
 }
 
 .selectedSeatIcon {
-    background-color: red;
+    background-color: rgb(116, 0, 0);
     width: 40px;
     height: 40px;
     margin: 3px;
@@ -102,6 +100,7 @@ li {
 
 .seat:nth-of-type(7) {
     margin-left: 18px;
+
 }
 
 .occupiedSeat:nth-of-type(2) {
@@ -113,7 +112,7 @@ li {
 }
 
 .selectedSeat {
-    background-color: red;
+    background-color: rgb(116, 0, 0);
     width: 40px;
     height: 40px;
     margin: 3px;
