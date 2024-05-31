@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedSeats.forEach(seat => {
             seat.classList.remove('selectedSeat');
             seat.classList.add('occupiedSeat');
-            seat.textContent = ''; // 선택된 좌석의 텍스트 내용을 제거합니다.
         });
     }
 });

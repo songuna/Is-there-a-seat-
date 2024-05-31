@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 500px;
 }
 
 .pcroomContainer {
@@ -93,6 +93,8 @@ li {
 
 .seat:hover {
     scale: 1.2;
+    background-color: rgb(116, 0, 0);
+    color: white;
 }
 
 .selectedSeat:hover {
@@ -116,6 +118,14 @@ li {
     margin-left: 18px;
 }
 
+.selectedSeat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+.selectedSeat:nth-of-type(7) {
+    margin-left: 18px;
+}
+
 .selectedSeat {
     background-color: rgb(116, 0, 0);
     width: 40px;
@@ -134,6 +144,10 @@ li {
     color: black;
     border-style: solid;
     border-width: 1px;
+}
+
+.occupiedSeat, .selectedSeat {
+    color: white;
 }
 
 .row {
