@@ -12,3 +12,10 @@ modalClose.addEventListener('click',function(){
     //'on' class 제거
     modal.classList.remove('on');
 });
+//블러 부분을 눌렀을 때 모달팝업이 닫힘
+modal.addEventListener('click', function(event) {
+    if(!event.target.closest('.modal_popup')){
+        //'on' class 제거
+        modal.classList.remove('on');
+    }
+})
